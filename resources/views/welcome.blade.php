@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Accueil</title>
-</head>
+@section('title', 'Accueil')
 
-<body>
-    <h1>Bienvenue sur le site de {{ $name }} !</h1>
-</body>
-
-</html>
+@section('content')
+    <h2>Bienvenue sur le site de {{ $name }} !</h2>
+@endsection
