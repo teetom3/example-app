@@ -10,4 +10,9 @@ class IndexController extends Controller
 
         return view('welcome', compact('name'));
     }
+
+    public function show($id = 1)
+    {
+        return "Article portant l'identifiant $id";
+    }
 }
