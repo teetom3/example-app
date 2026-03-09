@@ -11,7 +11,7 @@ class IndexController extends Controller
         return view('welcome', compact('name'));
     }
 
-    public function show($id = 1)
+    public function show($id)
     {
         return "Article portant l'identifiant $id";
     }
