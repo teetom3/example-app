@@ -8,6 +8,6 @@ class IndexController extends Controller
     {
         $name = 'Thomas';
 
-        return view('welcome', compact('message'));
+        return view('welcome', compact('name'));
     }
 }
