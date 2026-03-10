@@ -9,10 +9,7 @@
         @if ($loop->last)
             @break
         @endif
-        <x-article
-            :title="$article['title']"
-            :description="substr($article['description'], 0, 30) . '...'"
-        />
+        <x-article :title="$article['title']" :description="Str::limit($article['description'], 30)" />
     @empty
         <p>Aucun article disponible.</p>
     @endforelse
