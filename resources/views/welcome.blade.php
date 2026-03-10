@@ -11,7 +11,7 @@
         @endif
         <x-article
             :title="$article['title']"
-            :description="$article['description']"
+            :description="substr($article['description'], 0, 30) . '...'"
         />
     @empty
         <p>Aucun article disponible.</p>
