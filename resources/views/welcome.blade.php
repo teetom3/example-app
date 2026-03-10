@@ -6,7 +6,9 @@
     <h2>Bienvenue sur le site de {{ $name }} !</h2>
 
     @forelse ($articles as $article)
-        @break($loop->last)
+        @if ($loop->last)
+            @break
+        @endif
         <x-article
             :title="$article['title']"
             :description="$article['description']"
