@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+
 class IndexController extends Controller
 {
     public function index()
     {
-        $name = 'Thomas';
-
-        $articles = [
-            ['title' => "L'IA soigne mieux", 'description' => "L'intelligence artificielle aide les médecins à diagnostiquer plus vite."],
-            ['title' => 'Villes vertes',      'description' => 'Les métropoles deviennent plus écologiques et durables.'],
-            ['title' => 'Télétravail',        'description' => 'Plus de liberté, mais aussi plus de solitude.'],
-        ];
+        $name     = 'Thomas';
+        $articles = Article::all();
 
         return view('welcome', compact('name', 'articles'));
     }
 
     public function show($id)
     {
-        return view('pages.article-details', compact('id'));
+        $article = Article::findOrFail($id);
+
+        return view('pages.article-details', compact('article'));
     }
 }
