@@ -6,9 +6,6 @@
     <h2>Bienvenue sur le site de {{ $name }} !</h2>
 
     @forelse ($articles as $article)
-        @if ($loop->last)
-            @break
-        @endif
         <a href="{{ route('article.details', $article->id) }}">
             <x-article :title="$article->title" :description="Str::limit($article->description, 30)" />
         </a>

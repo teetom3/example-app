@@ -6,7 +6,7 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    public function creer()
+    public function create()
     {
         Article::create(['title' => "L'IA soigne mieux",  'description' => "L'intelligence artificielle aide les médecins à diagnostiquer plus vite."]);
         Article::create(['title' => 'Villes vertes',       'description' => 'Les métropoles deviennent plus écologiques et durables.']);
@@ -15,7 +15,7 @@ class ArticleController extends Controller
         return 'Les trois articles ont été créés.';
     }
 
-    public function modifier($id)
+    public function update($id)
     {
         $article = Article::findOrFail($id);
         $article->update([
@@ -26,7 +26,7 @@ class ArticleController extends Controller
         return "L'article $id a été modifié.";
     }
 
-    public function supprimer($id)
+    public function delete($id)
     {
         $article = Article::findOrFail($id);
         $article->delete();
